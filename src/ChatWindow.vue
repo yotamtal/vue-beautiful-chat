@@ -1,6 +1,7 @@
 <template>
   <div class="sc-chat-window" :class="{opened: isOpen, closed: !isOpen}">
     <Header
+      ref="Header"
       :title="title"
       :imageUrl="titleImageUrl"
       :onClose="onClose"
@@ -13,11 +14,13 @@
         </slot>
       </template>
     </Header>
-    <UserList
+    <ConversationList
+      ref="ConversationList"
       v-if="showConversationList"
-      :participants="participants"
+      :conversationList="conversationList"
     />
     <MessageList
+      ref="MessageList"
       v-if="!showConversationList"
       :messages="messages"
       :participants="participants"
@@ -67,13 +70,15 @@ import Header from './Header.vue'
 import MessageList from './MessageList.vue'
 import UserInput from './UserInput.vue'
 import UserList from './UserList.vue'
+import ConversationList from './ConversationList.vue'
 
 export default {
   components: {
     Header,
     MessageList,
     UserInput,
-    UserList
+    UserList,
+    ConversationList
   },
   props: {
     showEmoji: {

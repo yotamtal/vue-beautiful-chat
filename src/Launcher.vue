@@ -8,6 +8,7 @@
       <img v-else class="sc-open-icon" :src="icons.open.img"  :alt="icons.open.name" />
     </div>
     <ChatWindow
+      ref="ChatWindow"
       :messageList="messageList"
       :onUserInputSubmit="onMessageWasSent"
       :participants="participants"

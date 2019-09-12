@@ -2,7 +2,7 @@
   <div class="sc-header" :style="{background: colors.header.bg, color: colors.header.text}">
     <slot>
       <img class="sc-header--img" :src="imageUrl" alt="" v-if="imageUrl" />
-      <div v-if="!disableConversationListToggle" class="sc-header--title enabled" @click="toggleUserList"> {{title}} </div>
+      <div v-if="!disableConversationListToggle" class="sc-header--title enabled" @click="toggleConversationList"> {{title}} </div>
       <div v-else class="sc-header--title"> {{title}} </div>
     </slot>
       <div class="sc-header--close-button" @click="onClose">
@@ -48,14 +48,14 @@ export default {
     }
   },
   methods: {
-    toggleUserList() {
-      this.inUserList = !this.inUserList
-      this.$emit("userList", this.inUserList)
+    toggleConversationList() {
+      this.inConversationList = !this.inConversationList
+      this.$emit("conversationList", this.inConversationList)
     }
   },
   data() {
     return {
-      inUserList: false
+      inConversationList: false
     }
   }
 }
