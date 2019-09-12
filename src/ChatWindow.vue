@@ -89,6 +89,10 @@ export default {
       type: Boolean,
       default: false
     },
+    participants: {
+      type: Array,
+      required: true
+    },
     conversations: {
       type: Array,
       required: true
