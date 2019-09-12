@@ -55,6 +55,7 @@
     </MessageList>
     <UserInput
       v-if="!showConversationList"
+      ref="UserInput"
       :showEmoji="showEmoji"
       :onSubmit="onUserInputSubmit"
       :suggestions="getSuggestions()"
