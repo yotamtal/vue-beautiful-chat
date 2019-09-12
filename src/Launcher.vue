@@ -11,7 +11,7 @@
       ref="ChatWindow"
       :messageList="messageList"
       :onUserInputSubmit="onMessageWasSent"
-      :participants="participants"
+      :conversations="conversationList"
       :title="chatWindowTitle"
       :titleImageUrl="titleImageUrl"
       :isOpen="isOpen"
@@ -101,6 +101,10 @@ export default {
       default: false
     },
     participants: {
+      type: Array,
+      required: true
+    },
+    conversationList: {
       type: Array,
       required: true
     },

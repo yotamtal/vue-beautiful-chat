@@ -17,7 +17,7 @@
     <ConversationList
       ref="ConversationList"
       v-if="showConversationList"
-      :conversations="conversationList"
+      :conversations="conversations"
     />
     <MessageList
       ref="MessageList"
@@ -89,7 +89,7 @@ export default {
       type: Boolean,
       default: false
     },
-    participants: {
+    conversations: {
       type: Array,
       required: true
     },
