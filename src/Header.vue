@@ -5,9 +5,9 @@
       <div v-if="!disableConversationListToggle" class="sc-header--title enabled" @click="toggleConversationList"> {{title}} </div>
       <div v-else class="sc-header--title"> {{title}} </div>
     </slot>
-      <div class="sc-header--close-button" @click="onClose">
-        <img :src="icons.close.img" :alt="icons.close.name" />
-      </div>
+    <div class="sc-header--close-button" @click="onClose">
+      <img :src="icons.close.img" :alt="icons.close.name" />
+    </div>
   </div>
 </template>
 <script>

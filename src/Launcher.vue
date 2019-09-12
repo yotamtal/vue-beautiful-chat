@@ -28,35 +28,27 @@
       @scrollToTop="$emit('scrollToTop')"
       @onType="$emit('onType')"
       @edit="$emit('edit', $event)"
-      @remove="$emit('remove', $event)"
-    >
+      @remove="$emit('remove', $event)">
       <template v-slot:header>
-        <slot name="header">
-        </slot>
+        <slot name="header"></slot>
       </template>
       <template v-slot:conversation-list>
-        <slot name="conversation-list">
-        </slot>
+        <slot name="conversation-list"></slot>
       </template>
       <template v-slot:user-avatar="scopedProps">
-        <slot name="user-avatar" :user="scopedProps.user" :message="scopedProps.message">
-        </slot>
+        <slot name="user-avatar" :user="scopedProps.user" :message="scopedProps.message"></slot>
       </template>
       <template v-slot:text-message-body="scopedProps">
-        <slot name="text-message-body" :message="scopedProps.message" :messageText="scopedProps.messageText" :messageColors="scopedProps.messageColors" :me="scopedProps.me">
-        </slot>
+        <slot name="text-message-body" :message="scopedProps.message" :messageText="scopedProps.messageText" :messageColors="scopedProps.messageColors" :me="scopedProps.me"></slot>
       </template>
       <template v-slot:file-message-body="scopedProps">
-        <slot name="file-message-body" :message="scopedProps.message" :messageColors="scopedProps.messageColors">
-        </slot>
+        <slot name="file-message-body" :message="scopedProps.message" :messageColors="scopedProps.messageColors"></slot>
       </template>
       <template v-slot:system-message-body="scopedProps">
-        <slot name="system-message-body" :message="scopedProps.message">
-        </slot>
+        <slot name="system-message-body" :message="scopedProps.message"></slot>
       </template>
       <template v-slot:text-message-toolbox="scopedProps">
-        <slot name="text-message-toolbox" :message="scopedProps.message" :me="scopedProps.me">
-        </slot>
+        <slot name="text-message-toolbox" :message="scopedProps.message" :me="scopedProps.me"></slot>
       </template>
     </ChatWindow>
   </div>
@@ -209,6 +201,7 @@ export default {
   },
   computed: {
     chatWindowTitle() {
+
       if (this.$refs.ChatWindow && this.$refs.ChatWindow.showConversationList) {
         return 'Conversations'
       }
@@ -224,6 +217,7 @@ export default {
       } else {
         return 'You & ' + this.participants[0].name
       }
+      
     }
   },
   components: {
