@@ -26,8 +26,6 @@ export default {
   .conversation-list {
     height: 100%;
     overflow: auto;
-    padding-left: 5px;
-    padding-top: 8px;
   }
   .img-msg {
     border-radius: 50%;
