@@ -34,6 +34,10 @@
         <slot name="header">
         </slot>
       </template>
+      <template v-slot:conversation-list>
+        <slot name="conversation-list">
+        </slot>
+      </template>
       <template v-slot:user-avatar="scopedProps">
         <slot name="user-avatar" :user="scopedProps.user" :message="scopedProps.message">
         </slot>
@@ -205,6 +209,10 @@ export default {
   },
   computed: {
     chatWindowTitle() {
+      if (this.$refs.ChatWindow.showConversationList) {
+        return 'Conversations'
+      }
+
       if (this.title !== '') {
         return this.title
       }

@@ -1,13 +1,15 @@
 <template>
   <div class="conversation-list">
-    <table class="" style="padding-top: 5px">
-      <tbody>
-        <tr v-for="conversation in conversations" :key="conversation.uri">
+    <slot>
+      <table class="" style="padding-top: 5px">
+        <tbody>
+          <tr v-for="conversation in conversations" :key="conversation.uri">
             <td style="text-align: center;"><img :src="conversation.user.avatar" class="img-msg"/></td>
             <td class="conversation-element">{{conversation.user.name}}</td>
-        </tr>
-      </tbody>
-  </table>
+          </tr>
+        </tbody>
+      </table>
+    </slot>
   </div>
 </template>
 <script>
@@ -17,7 +19,8 @@ export default {
       type: Array,
       required: true
     }
-  }
+  },
+  
 }
 </script>
 <style scoped>
