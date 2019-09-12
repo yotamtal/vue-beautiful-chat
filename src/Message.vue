@@ -31,10 +31,8 @@
       </TextMessage>
       <EmojiMessage v-else-if="message.type === 'emoji'" :data="message.data" />
       <FileMessage v-else-if="message.type === 'file'" :me="scopedProps.me" :data="message.data" :messageColors="determineMessageColors()" >
-        <template v-slot:default="scopedProps">
-          <slot name="file-message-body" :message="message.data">
-          </slot>
-        </template>
+         <slot name="file-message-body" :message="message.data">
+        </slot>
       </FileMessage>
       <TypingMessage v-else-if="message.type === 'typing'" :messageColors="determineMessageColors()" />
       <SystemMessage v-else-if="message.type === 'system'" :data="message.data" :messageColors="determineMessageColors()">
