@@ -30,7 +30,7 @@
           </template>
       </TextMessage>
       <EmojiMessage v-else-if="message.type === 'emoji'" :data="message.data" />
-      <FileMessage v-else-if="message.type === 'file'" :me="scopedProps.me" :data="message.data" :messageColors="determineMessageColors()" >
+      <FileMessage v-else-if="message.type === 'file'" :data="message.data" :messageColors="determineMessageColors()" >
          <slot name="file-message-body" :message="message.data">
         </slot>
       </FileMessage>

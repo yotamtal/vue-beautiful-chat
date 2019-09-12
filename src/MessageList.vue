@@ -10,7 +10,7 @@
         </slot>
       </template>
       <template v-slot:file-message-body="scopedProps">
-        <slot name="file-message-body" :message="scopedProps.message" :messageText="scopedProps.messageText" :messageColors="scopedProps.messageColors" :me="scopedProps.me">
+        <slot name="file-message-body" :message="scopedProps.message" :messageText="scopedProps.messageText" :messageColors="scopedProps.messageColors">
         </slot>
       </template>
       <template v-slot:text-message-toolbox="scopedProps">
