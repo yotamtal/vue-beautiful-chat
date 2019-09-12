@@ -3,9 +3,9 @@
     <slot>
       <table class="" style="padding-top: 5px">
         <tbody>
-          <tr v-for="conversation in conversations" :key="conversation.uri">
-            <td style="text-align: center;"><img :src="conversation.user.avatar" class="img-msg"/></td>
-            <td class="conversation-element">{{conversation.user.name}}</td>
+          <tr v-for="conversation in conversations" :key="conversation.id">
+            <td style="text-align: center;"><img :src="conversation.imageUrl" class="img-msg"/></td>
+            <td class="conversation-element">{{conversation.members ? conversation.members.map(m=>m.name).join(' & ') : conversation.title}}</td>
           </tr>
         </tbody>
       </table>
