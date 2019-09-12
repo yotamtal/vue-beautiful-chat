@@ -17,7 +17,7 @@
     <ConversationList
       ref="ConversationList"
       v-if="showConversationList"
-      :conversationList="conversationList"
+      :conversations="conversationList"
     />
     <MessageList
       ref="MessageList"
