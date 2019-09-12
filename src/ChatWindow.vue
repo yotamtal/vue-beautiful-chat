@@ -18,8 +18,7 @@
       ref="ConversationList"
       v-if="showConversationList"
       :conversations="conversations">
-        <slot name="conversation-list" :conversations="conversations">
-        </slot>
+        <slot name="conversation-list" :conversations="conversations"></slot>
     </ConversationList>
     <MessageList
       ref="MessageList"

@@ -1,6 +1,6 @@
 <template>
   <div class="conversation-list">
-    <slot>
+    <slot :conversations="conversations">
       <table class="" style="padding-top: 5px">
         <tbody>
           <tr v-for="conversation in conversations" :key="conversation.id">
