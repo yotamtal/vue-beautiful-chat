@@ -209,7 +209,7 @@ export default {
   },
   computed: {
     chatWindowTitle() {
-      if (this.$refs.ChatWindow.showConversationList) {
+      if (this.$refs.ChatWindow && this.$refs.ChatWindow.showConversationList) {
         return 'Conversations'
       }
 
