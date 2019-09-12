@@ -146,7 +146,8 @@ export default {
     },
     focusUserInput() {
       this.$nextTick(() => {
-        this.$refs.userInput.focus();
+        if(this.$refs.userInput)
+          this.$refs.userInput.focus();
       })
     },
     _submitSuggestion(suggestion) {
