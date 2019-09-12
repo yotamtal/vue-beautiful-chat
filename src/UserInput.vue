@@ -251,6 +251,11 @@ export default {
   border-bottom-right-radius: 10px;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
+.sc-user-input--filename {
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .sc-user-input--text {
   width: 300px;
