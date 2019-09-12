@@ -11,6 +11,7 @@
       ref="ChatWindow"
       :messageList="messageList"
       :onUserInputSubmit="onMessageWasSent"
+      :participants="participants"
       :conversations="conversationList"
       :title="chatWindowTitle"
       :titleImageUrl="titleImageUrl"
