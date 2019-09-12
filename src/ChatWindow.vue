@@ -5,8 +5,8 @@
       :imageUrl="titleImageUrl"
       :onClose="onClose"
       :colors="colors"
-      :disableUserListToggle="disableUserListToggle"
-      @userList="handleUserListToggle"
+      :disableConversationListToggle="disableConversationListToggle"
+      @conversationList="handleConversationListToggle"
     >
       <template>
         <slot name="header">
@@ -14,11 +14,11 @@
       </template>
     </Header>
     <UserList
-      v-if="showUserList"
+      v-if="showConversationList"
       :participants="participants"
     />
     <MessageList
-      v-if="!showUserList"
+      v-if="!showConversationList"
       :messages="messages"
       :participants="participants"
       :showTypingIndicator="showTypingIndicator"
@@ -50,7 +50,7 @@
       </template>
     </MessageList>
     <UserInput
-      v-if="!showUserList"
+      v-if="!showConversationList"
       :showEmoji="showEmoji"
       :onSubmit="onUserInputSubmit"
       :suggestions="getSuggestions()"
@@ -132,14 +132,14 @@ export default {
       type: Boolean,
       required: true
     },
-    disableUserListToggle: {
+    disableConversationListToggle: {
       type: Boolean,
       default: false
     }
   },
   data() {
     return {
-      showUserList: false
+      showConversationList: false
     }
   },
   computed: {
@@ -150,8 +150,8 @@ export default {
     }
   },
   methods: {
-    handleUserListToggle(showUserList) {
-      this.showUserList = showUserList
+    handleConversationListToggle(showConversationList) {
+      this.showConversationList = showConversationList
     },
     getSuggestions(){
       return this.messages.length > 0 ? this.messages[this.messages.length - 1].suggestions : []

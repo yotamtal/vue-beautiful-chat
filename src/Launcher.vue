@@ -22,7 +22,7 @@
       :colors="colors"
       :alwaysScrollToBottom="alwaysScrollToBottom"
       :messageStyling="messageStyling"
-      :disableUserListToggle="disableUserListToggle"
+      :disableConversationListToggle="disableConversationListToggle"
       @scrollToTop="$emit('scrollToTop')"
       @onType="$emit('onType')"
       @edit="$emit('edit', $event)"
@@ -186,7 +186,7 @@ export default {
       type: Boolean,
       default: () => false
     },
-    disableUserListToggle: {
+    disableConversationListToggle: {
       type: Boolean,
       default: false
     },
